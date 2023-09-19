@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Profile</title>
+    <link rel="shortcut icon" href="{% static 'images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}" />
+</head>
+<body>
+    <div class="container-fluid overcover">
+        <div class="container profile-box">
+            <div class="head-top row">
+                <ul>
+                    <li class="act"><a href="#about">About</a></li>
+                    <li class="pro"><a href="#profile">Profile</a></li>
+                    <li class="res"><a href="#resume">Resume</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                            </div>
+                            <div id="about" class="home row">
+                                <div class="image-box">
+                                    <img src="{{ user.socialaccount_set.first.extra_data.picture }}" alt="Profile Image">
+                                </div>
+                            </div>
+                            <div class="basic-detail row">
+                                <div class="col-md-8 detail-col">
+                                    <h2>Hello, {{ user.socialaccount_set.first.extra_data.name }}</h2>
+                                    <h2>Your Email: {{ user.email }}</h2>
+                                    
+                                    <div class="btn-cover">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</html>
